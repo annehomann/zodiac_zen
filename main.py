@@ -1,107 +1,111 @@
-""" 
-This is the docstring 
 """
-from bs4 import BeautifulSoup
-import requests
-import os
+This is the docstring
+"""
 import datetime
-import emoji
+import requests
+#import argparse
+from bs4 import BeautifulSoup
+from colorama import Back, Style
 
-datestamp = datetime.datetime.now()
-print (datestamp.strftime('\n%A, %B %d, %Y \n%I:%M:%S %p\n'))
+DATESTAMP = datetime.datetime.now()
+print(DATESTAMP.strftime('\n%A, %B %d, %Y \n'))
 
 def menu():
+    """ FUNCTION DOCSTRING """
     while True:
-        print('Welcome to Zodiac Zen! Please select an option...')
-        print('(1) What is my star sign?')
+        print(Back.BLUE)
+        print('\n\t\U0001F525 Welcome to Zodiac Zen! Please select an option...')
+        print(Style.RESET_ALL)
+        print('\n(1) What is my star sign?')
         print('(2) Receive my daily horoscope')
         print('(3) Exit')
         user_input = input('\n')
 
         if user_input == '1':
-            astro()                       
+            astro()
         elif user_input == '2':
             readings()
         elif user_input == '3':
-            print('Thank you for using Zodiac Zen! Goodbye \U0001F600')
+            print('Thank you for using Zodiac Zen! Goodbye \U0001F44B')
             break
         else:
             print('Sorry, try again. Choose one from above')
 
 def astro():
+    """ FUNCTION DOCSTRING """
     while True:
         try:
             day = int(input("What is your birth date: "))
             if day < 1 or day > 31:
-                raise ValueError #this will send it to the print message and back to the input option
+                raise ValueError
             break
         except ValueError:
             print("Invalid birth date! It must be in the range of 1-31.")
-    month = input("What is your birth month: ").strip()
+    month = input("What is your birth month: ").strip().lower()
     if month == 'december':
-        astro_sign = 'sagittarius - the archer.\n' if (day < 22) else 'capricorn - the goat.\n'
+        astro_sign = '\U00002650 sagittarius\n' if (day < 22) else '\U00002651 capricorn\n'
     elif month == 'january':
-        astro_sign = 'capricorn - the goat.\n' if (day < 20) else 'aquarius - the water bearer.\n'
+        astro_sign = '\U00002651 capricorn\n' if (day < 20) else '\U00002652 aquarius\n'
     elif month == 'february':
-        astro_sign = 'aquarius - the water bearer.\n' if (day < 19) else 'pisces - the fishes.\n'
+        astro_sign = '\U00002652 aquarius\n' if (day < 19) else '\U00002653 pisces\n'
     elif month == 'march':
-        astro_sign = 'pisces - the fishes.\n' if (day < 21) else 'aries - the ram.\n'
+        astro_sign = '\U00002653 pisces\n' if (day < 21) else '\U00002648 aries\n'
     elif month == 'april':
-        astro_sign = 'aries - the ram.\n' if (day < 20) else 'taurus - the bull.\n'
+        astro_sign = '\U00002648 aries\n' if (day < 20) else '\U00002649 taurus\n'
     elif month == 'may':
-        astro_sign = 'taurus - the bull.\n' if (day < 21) else 'gemini - the twins.\n'
+        astro_sign = '\U00002649 taurus\n' if (day < 21) else '\U0000264A gemini\n'
     elif month == 'june':
-        astro_sign = 'gemini - the twins.\n' if (day < 21) else 'cancer - the crab.\n'
+        astro_sign = '\U0000264A gemini\n' if (day < 21) else '\U0000264B cancer\n'
     elif month == 'july':
-        astro_sign = 'cancer - the crab.\n' if (day < 23) else 'leo - the lion.\n'
+        astro_sign = '\U0000264B cancer\n' if (day < 23) else '\U0000264C leo\n'
     elif month == 'august':
-        astro_sign = 'leo - the lion.\n' if (day < 23) else 'virgo - the virgin.\n'
+        astro_sign = '\U0000264C leo\n' if (day < 23) else '\U0000264D virgo\n'
     elif month == 'september':
-        astro_sign = 'virgo - the virgin.\n' if (day < 23) else 'libra - the balance.\n'
+        astro_sign = '\U0000264D virgo\n' if (day < 23) else '\U0000264E libra\n'
     elif month == 'october':
-        astro_sign = 'libra - the balance.\n' if (day < 23) else 'scorpio - the scorpian.\n'
+        astro_sign = '\U0000264E libra\n' if (day < 23) else '\U0000264F scorpio\n'
     elif month == 'november':
-        astro_sign = 'scorpio - the scorpian.\n' if (day < 22) else 'sagittarius - the archer.\n'
-    print(f"\nYour Astrological sign is: {astro_sign.title()}")
+        astro_sign = '\U0000264F scorpio\n' if (day < 22) else '\U00002650 sagittarius\n'
+    print(Back.RED)
+    print(f'\n\tYour Astrological sign is: {astro_sign.title()}')
+    print(Style.RESET_ALL)
 
 def readings():
+    """ FUNCTION DOCSTRING """
     url = 'http://annehomann.github.io/astro.html'
-    r = requests.get(url)
-    s = BeautifulSoup(r.content, 'html.parser')
+    request = requests.get(url)
+    soup = BeautifulSoup(request.content, 'html.parser')
     #find text, get only text, append to list
     horoscope = []
-    for text in s.find_all("p"):
-        b = text.get_text().strip()
-        horoscope.append(b)
+    for text in soup.find_all("p"):
+        block = text.get_text().strip()
+        horoscope.append(block)
 
-    user_sign = (input("Please enter your star sign: ")).strip()
-    if user_sign == 'capricorn': 
+    user_sign = (input("Please enter your star sign: ")).strip().lower()
+    if user_sign == 'capricorn':
         print('\n' + horoscope[0] + '\n')
         print('\nWould you like to save a copy of your horoscope?\nY/N?\n')
         answer = input()
         if answer == 'Y':
-            with open ("capricorn" + '.txt', 'w') as file:
+            with open("capricorn" + '.txt', 'w') as file:
                 file.write(horoscope[0])
-        elif answer == 'N':
-            exit
+        else: exit
     elif user_sign == 'aquarius':
         print('\n' + '\t\t' + horoscope[1] + '\n')
         print('\nWould you like to save a copy of your horoscope?\nY/N?\n')
         answer = input()
         if answer == 'Y':
-            with open ('aquarius' + '.txt', 'w') as file:
+            with open('aquarius' + '.txt', 'w') as file:
                 file.write(horoscope[1])
-        elif answer == 'N':
-            exit            
+        else: exit
     elif user_sign == 'pisces':
         print('\n' + '\t\t' + horoscope[2] + '\n')
         print('\nWould you like to save a copy of your horoscope?\nY/N?\n')
         answer = input()
         if answer == 'Y':
-            with open ('pisces' + '.txt', 'w') as file:
+            with open('pisces' + '.txt', 'w') as file:
                 file.write(horoscope[2])
-        elif answer == 'N':
-            exit  
+        else: exit
     elif user_sign == 'aries':
         print('\n' + '\t\t' + horoscope[3] + '\n')
     elif user_sign == 'taurus':
@@ -109,7 +113,7 @@ def readings():
     elif user_sign == 'gemini':
         print('\n' + '\t\t' + horoscope[5] + '\n')
     elif user_sign == 'cancer':
-        print('\n' + '\t\t' + horoscope[6] + '\n')  
+        print('\n' + '\t\t' + horoscope[6] + '\n')
     elif user_sign == 'leo':
         print('\n' + '\t\t' + horoscope[7] + '\n')
     elif user_sign == 'virgo':
