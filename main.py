@@ -29,7 +29,14 @@ def menu():
             print('Sorry, try again. Choose one from above')
 
 def astro():
-    day = int(input("What is your birth date: "))
+    while True:
+        try:
+            day = int(input("What is your birth date: "))
+            if day < 1 or day > 31:
+                raise ValueError #this will send it to the print message and back to the input option
+            break
+        except ValueError:
+            print("Invalid birth date! It must be in the range of 1-31.")
     month = input("What is your birth month: ").strip()
     if month == 'december':
         astro_sign = 'sagittarius - the archer.\n' if (day < 22) else 'capricorn - the goat.\n'
