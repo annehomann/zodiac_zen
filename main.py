@@ -7,8 +7,8 @@ Licence: GPLv3
 Version: 0.1
 """
 import datetime
-import requests
 #import argparse
+import requests
 from bs4 import BeautifulSoup
 from colorama import Back, Style
 
@@ -48,7 +48,15 @@ def astro():
             break
         except ValueError:
             print("\tInvalid birth date! It must be in the range of 1-31.")
-    month = input("\n\tWhat month were you born?: ").strip().lower()
+    while True:
+        try:
+            month = str(input("\n\tWhat month were you born?: ")).strip().lower()
+            if month not in ('january', 'febuary', 'march', 'april', 'may', 'june',
+            'july', 'august', 'september', 'october', 'november', 'december'):
+                raise TypeError
+            break
+        except TypeError:
+            print("\tInvalid birth month! Please try again.")
     if month == 'december':
         astro_sign = '\U00002650 sagittarius\n' if (day < 22) else '\U00002651 capricorn\n'
     elif month == 'january':
