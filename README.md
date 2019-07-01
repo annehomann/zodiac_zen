@@ -12,7 +12,7 @@ Zodiac Zen is my first CLI written in python and is to be assessed as our first 
 
 It's a fun, little app that works out what your star sign is and also what your daily horoscope says. If it's a good one, you can even save it to a text file ☺️
 
-![](/Users/annehomann/coder_academy/term1/assignment1/test.gif)
+![](test.gif)
 
 (this gif will be updated once this app has been packed into an executable)
 
