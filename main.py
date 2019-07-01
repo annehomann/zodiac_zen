@@ -32,10 +32,10 @@ def menu():
         elif user_input == '2':
             readings()
         elif user_input == '3':
-            print('Thank you for using Zodiac Zen! Goodbye \U0001F44B')
+            print('\n\tThank you for using Zodiac Zen! Goodbye \U0001F44B\n')
             break
         else:
-            print('Sorry, try again. Choose one from above')
+            print('\n\tSorry, try again. Choose one from above')
 
 def astro():
     """ Gets the user's birth date and month and outputs
