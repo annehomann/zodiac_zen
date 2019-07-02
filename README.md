@@ -1,10 +1,10 @@
 ```
-        ███████╗ ██████╗ ██████╗ ██╗ █████╗  ██████╗    ███████╗███████╗███╗   ██╗
-        ╚══███╔╝██╔═══██╗██╔══██╗██║██╔══██╗██╔════╝    ╚══███╔╝██╔════╝████╗  ██║
-          ███╔╝ ██║   ██║██║  ██║██║███████║██║           ███╔╝ █████╗  ██╔██╗ ██║
-         ███╔╝  ██║   ██║██║  ██║██║██╔══██║██║          ███╔╝  ██╔══╝  ██║╚██╗██║
-        ███████╗╚██████╔╝██████╔╝██║██║  ██║╚██████╗    ███████╗███████╗██║ ╚████║
-        ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝    ╚══════╝╚══════╝╚═╝  ╚═══╝
+          ███████╗ ██████╗ ██████╗ ██╗ █████╗  ██████╗    ███████╗███████╗███╗   ██╗
+          ╚══███╔╝██╔═══██╗██╔══██╗██║██╔══██╗██╔════╝    ╚══███╔╝██╔════╝████╗  ██║
+            ███╔╝ ██║   ██║██║  ██║██║███████║██║           ███╔╝ █████╗  ██╔██╗ ██║
+           ███╔╝  ██║   ██║██║  ██║██║██╔══██║██║          ███╔╝  ██╔══╝  ██║╚██╗██║
+          ███████╗╚██████╔╝██████╔╝██║██║  ██║╚██████╗    ███████╗███████╗██║ ╚████║
+          ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝    ╚══════╝╚══════╝╚═╝  ╚═══╝
                                                                           
 ```
 
@@ -12,18 +12,15 @@ Zodiac Zen is my first CLI written in python and is to be assessed as our first 
 
 It's a fun, little app that works out what your star sign is and also what your daily horoscope says. If it's a good one, you can even save it to a text file ☺️
 
+In time, this will be refined with more features and refactored code.
+
 ![](test.gif)
 
 (this gif will be updated once this app has been packed into an executable)
 
 
 
-## Installation
-
-- 
-- 
-
-### Clone
+## Clone
 
 - Clone this repo to your local machine using `https://github.com/annehomann/zodiac_zen.git`
 
@@ -33,14 +30,20 @@ It's a fun, little app that works out what your star sign is and also what your 
 
 - Find out your star sign!
 - Get your daily horoscope!
-- Save it to file!
+- Save it to your computer!
 
 
 
 ## FAQ
 
-- How do I do *specifically* so and so?
-  - No problem! Just do this.
+- How do I find out my star sign?
+  - Easy! Just select option 1 in the menu and enter your date of birth and your birth month and Zodiac Zen will work it out for you 
+- How do I read my daily horoscope?
+  - Select option 2 in the menu and enter your star sign. This will retrieve your daily reading specific to your star sign
+- Can I read the daily horoscope for any other star sign?
+  - Of course you can! You can type in any star sign and get the relevant reading! Show off to your friends 😉
+- Can I download my reading?
+  - Definitely. After you get your reading, you will be asked if you want to save a copy. Press Y and you will have a copy in your downloads.
 
 
 
@@ -50,4 +53,6 @@ It's a fun, little app that works out what your star sign is and also what your 
 
 - **MIT license**
 
+  ©️ Anne Homann 2019
+  
   
