@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Program: Zodiac Zen
 Author: Anne Homann
@@ -7,11 +8,12 @@ Licence: GPLv3
 Version: 0.1
 """
 import datetime
-#import argparse
+import argparse
 import requests
 from bs4 import BeautifulSoup
 from colorama import Back, Style
 
+# Shows current day and time to user
 DATESTAMP = datetime.datetime.now()
 print(DATESTAMP.strftime('\n%A, %B %d, %Y'))
 
@@ -40,6 +42,7 @@ def menu():
 def astro():
     """ Gets the user's birth date and month and outputs
         their astrological star sign """
+    # Error handling for invalid input
     while True:
         try:
             day = int(input("\n\tWhat day of the month were you born? (numbers only): "))
@@ -51,12 +54,13 @@ def astro():
     while True:
         try:
             month = str(input("\n\tWhat month were you born?: ")).strip().lower()
-            if month not in ('january', 'febuary', 'march', 'april', 'may', 'june',
+            if month not in ('january', 'february', 'march', 'april', 'may', 'june',
             'july', 'august', 'september', 'october', 'november', 'december'):
                 raise TypeError
             break
         except TypeError:
             print("\tInvalid birth month! Please try again.")
+    # Start of conditional statement for star signs
     if month == 'december':
         astro_sign = '\U00002650 sagittarius\n' if (day < 22) else '\U00002651 capricorn\n'
     elif month == 'january':
@@ -87,7 +91,8 @@ def astro():
 
 DATE_READING = datetime.datetime.now()
 def readings():
-    """ Scrapes HTML """
+    """ Scrapes HTML and adds each paragraph
+    to an index in a list"""
     url = 'http://annehomann.github.io/astro.html'
     request = requests.get(url)
     soup = BeautifulSoup(request.content, 'html.parser')
@@ -96,8 +101,18 @@ def readings():
     for text in soup.find_all("p"):
         block = text.get_text().strip()
         horoscope.append(block)
-
-    user_sign = (input("\n\tPlease enter your star sign: ")).strip().lower()
+    
+    # Error handling for invalid inout
+    while True:
+        try:
+            user_sign = (input("\n\tPlease enter your star sign: ")).strip().lower()
+            if user_sign not in ('capricorn', 'aquarius', 'pisces', 'aries', 'taurus',
+            'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius'):
+                raise TypeError
+            break
+        except TypeError:
+            print("\tInvalid star sign! Please try again.")
+    # Start of conditional statement for horoscope readings
     if user_sign == 'capricorn':
         print('\n' + horoscope[0] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
@@ -184,3 +199,33 @@ def readings():
                 file.write(horoscope[11])
 
 menu()
+
+PARSER = argparse.ArgumentParser()
+PARSER.add_argument('-e', '--element', help='Find out element by entering star sign', required=True)
+ARGS = PARSER.parse_args()
+
+if __name__ == "__main__":
+    if ARGS.element == 'capricorn':
+        print("Earth Element: {}".format(ARGS.element).title())
+    elif ARGS.element == 'virgo':
+        print("Earth Element: {}".format(ARGS.element).title())
+    elif ARGS.element == 'taurus':
+        print("Earth Element: {}".format(ARGS.element).title())
+    elif ARGS.element == 'aquarius':
+        print("Air Element: {}".format(ARGS.element).title())
+    elif ARGS.element == 'gemini':
+        print("Air Element: {}".format(ARGS.element).title())
+    elif ARGS.element == 'libra':
+        print("Air Element: {}".format(ARGS.element).title())
+    elif ARGS.element == 'aries':
+        print("Fire Element: {}".format(ARGS.element).title())
+    elif ARGS.element == 'leo':
+        print("Fire Element: {}".format(ARGS.element).title())
+    elif ARGS.element == 'sagittarius':
+        print("Fire Element: {}".format(ARGS.element).title())
+    elif ARGS.element == 'pisces':
+        print("Water Element: {}".format(ARGS.element).title())
+    elif ARGS.element == 'cancer':
+        print("Water Element: {}".format(ARGS.element).title())
+    elif ARGS.element == 'scorpio':
+        print("Water Element: {}".format(ARGS.element).title())
