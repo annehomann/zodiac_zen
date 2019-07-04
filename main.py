@@ -2,6 +2,7 @@
 """
 Program: Zodiac Zen
 Author: Anne Homann
+Contact: css011906@coderacademy.edu.au
 Date: 2019/06/29
 Licence: GPLv3
 Version: 0.1
@@ -28,11 +29,15 @@ def menu():
         print('\t(3) Exit')
         user_input = input('\n\t')
 
+        # Option 1 calls the astro function
         if user_input == '1':
             astro()
+        # Option 2 calls the get_sign function and stores the user's input into the sign variable
+        # Then the get_readings function is called with signs as an argument
         elif user_input == '2':
             sign = get_sign()
             get_readings(sign)
+        # Option 3 is Exit
         elif user_input == '3':
             print('\n\tThank you for using Zodiac Zen! Goodbye \U0001F44B\n')
             break
@@ -90,6 +95,7 @@ def astro():
     print(Style.RESET_ALL)
 
 DATE_READING = datetime.datetime.now()
+# Global variable to store daily horoscope readings
 HOROSCOPE = []
 def web_scrape():
     """ Scrapes HTML and adds each paragraph
@@ -103,8 +109,8 @@ def web_scrape():
         HOROSCOPE.append(block)
 
 def get_sign():
-    """ docsting """
-    # Error handling for invalid inout
+    """ Ask the user for their star sign """
+    # Error handling for invalid input
     while True:
         try:
             user_sign = (input("\n\tPlease enter your star sign: ")).strip().lower()
@@ -117,7 +123,8 @@ def get_sign():
             print("\tInvalid star sign! Please try again.")
 
 def get_readings(sign):
-    """ docsting """
+    """ Takes the user's input and retrieves the
+    correct hororscope then asks them to save to file"""
     print('\t' + sign.upper())
     # Start of conditional statement for horoscope readings
     if sign == "capricorn":
@@ -205,22 +212,16 @@ def get_readings(sign):
             with open('sagittarius_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(HOROSCOPE[11])
 
+# Argparse
 if __name__ == "__main__":
     PARSER = argparse.ArgumentParser()
     PARSER.add_argument('-r', '--reading', help='Daily Horoscope Reading')
-    myargs = PARSER.parse_args()
+    MYARGS = PARSER.parse_args()
 
-    sign = myargs.reading
+    SIGN = MYARGS.reading
 
-    if myargs.reading == None:
+    if MYARGS.reading == None:
         menu()
     else:
         web_scrape()
-        get_readings(sign)
-
-
-
-    # quit()
-
-
-
+        get_readings(SIGN)
