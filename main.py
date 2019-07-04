@@ -205,35 +205,22 @@ def get_readings(sign):
             with open('sagittarius_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(HOROSCOPE[11])
 
-PARSER = argparse.ArgumentParser()
-PARSER.add_argument('-e', '--element', help='Find out element by entering star sign')
-ARGS = PARSER.parse_args()
-
 if __name__ == "__main__":
-    if ARGS.element == "capricorn":
-        print("Earth Element: {}".format(ARGS.element).title())
-    elif ARGS.element == "virgo":
-        print("Earth Element: {}".format(ARGS.element).title())
-    elif ARGS.element == "taurus":
-        print("Earth Element: {}".format(ARGS.element).title())
-    elif ARGS.element == "aquarius":
-        print("Air Element: {}".format(ARGS.element).title())
-    elif ARGS.element == "gemini":
-        print("Air Element: {}".format(ARGS.element).title())
-    elif ARGS.element == "libra":
-        print("Air Element: {}".format(ARGS.element).title())
-    elif ARGS.element == "aries":
-        print("Fire Element: {}".format(ARGS.element).title())
-    elif ARGS.element == "leo":
-        print("Fire Element: {}".format(ARGS.element).title())
-    elif ARGS.element == "sagittarius":
-        print("Fire Element: {}".format(ARGS.element).title())
-    elif ARGS.element == "pisces":
-        print("Water Element: {}".format(ARGS.element).title())
-    elif ARGS.element == "cancer":
-        print("Water Element: {}".format(ARGS.element).title())
-    elif ARGS.element == "scorpio":
-        print("Water Element: {}".format(ARGS.element).title())
-        quit()
+    PARSER = argparse.ArgumentParser()
+    PARSER.add_argument('-r', '--reading', help='Daily Horoscope Reading')
+    myargs = PARSER.parse_args()
 
-menu()
+    sign = myargs.reading
+
+    if myargs.reading == None:
+        menu()
+    else:
+        web_scrape()
+        get_readings(sign)
+
+
+
+    # quit()
+
+
+
