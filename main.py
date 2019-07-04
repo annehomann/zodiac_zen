@@ -2,7 +2,6 @@
 """
 Program: Zodiac Zen
 Author: Anne Homann
-Contact: css011906@coderacademy.edu.au
 Date: 2019/06/29
 Licence: GPLv3
 Version: 0.1
@@ -32,12 +31,15 @@ def menu():
         if user_input == '1':
             astro()
         elif user_input == '2':
-            readings()
+            get_sign()
+            # sign = get_sign()
+            get_readings()
         elif user_input == '3':
             print('\n\tThank you for using Zodiac Zen! Goodbye \U0001F44B\n')
             break
         else:
             print('\n\tSorry, try again. Choose one from above')
+        
 
 def astro():
     """ Gets the user's birth date and month and outputs
@@ -90,115 +92,123 @@ def astro():
     print(Style.RESET_ALL)
 
 DATE_READING = datetime.datetime.now()
-def readings():
+horoscope = []
+def web_scrape():
     """ Scrapes HTML and adds each paragraph
     to an index in a list"""
     url = 'http://annehomann.github.io/astro.html'
     request = requests.get(url)
     soup = BeautifulSoup(request.content, 'html.parser')
     #find text, get only text, append to list
-    horoscope = []
     for text in soup.find_all("p"):
         block = text.get_text().strip()
         horoscope.append(block)
     
+def get_sign():
+    # print(sign)
     # Error handling for invalid inout
     while True:
         try:
             user_sign = (input("\n\tPlease enter your star sign: ")).strip().lower()
+            web_scrape()
+            
             if user_sign not in ('capricorn', 'aquarius', 'pisces', 'aries', 'taurus',
             'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius'):
                 raise TypeError
-            break
+           
+            return user_sign
+
+            # break
         except TypeError:
             print("\tInvalid star sign! Please try again.")
+
+def get_readings():
+    print(get_sign())
     # Start of conditional statement for horoscope readings
-    if user_sign == 'capricorn':
-        print('\n' + horoscope[0] + '\n')
+    if get_sign() == "capricorn":
+        print('\n' + '\t\t' + horoscope[0] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
         answer = input('\t').upper()
         if answer == 'Y':
-            with open("capricorn_" + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
-                file.write(horoscope[0])
-    elif user_sign == 'aquarius':
+            with open('capricorn' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
+                file.write(horoscope[1])
+    elif get_sign == "aquarius":
         print('\n' + '\t\t' + horoscope[1] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
         answer = input('\t').upper()
         if answer == 'Y':
             with open('aquarius_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(horoscope[1])
-    elif user_sign == 'pisces':
+    elif get_sign == "pisces":
         print('\n' + '\t\t' + horoscope[2] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
         answer = input('\t').upper()
         if answer == 'Y':
             with open('pisces_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(horoscope[2])
-    elif user_sign == 'aries':
+    elif get_sign == "aries":
         print('\n' + '\t\t' + horoscope[3] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
         answer = input('\t').upper()
         if answer == 'Y':
             with open('aries_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(horoscope[3])
-    elif user_sign == 'taurus':
+    elif get_sign == "taurus":
         print('\n' + '\t\t' + horoscope[4] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
         answer = input('\t').upper()
         if answer == 'Y':
             with open('taurus_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(horoscope[4])
-    elif user_sign == 'gemini':
+    elif get_sign == "gemini":
         print('\n' + '\t\t' + horoscope[5] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
         answer = input('\t').upper()
         if answer == 'Y':
             with open('gemini_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(horoscope[5])
-    elif user_sign == 'cancer':
+    elif get_sign == "cancer":
         print('\n' + '\t\t' + horoscope[6] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
         answer = input('\t').upper()
         if answer == 'Y':
             with open('cancer_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(horoscope[6])
-    elif user_sign == 'leo':
+    elif get_sign == "leo":
         print('\n' + '\t\t' + horoscope[7] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
         answer = input('\t').upper()
         if answer == 'Y':
             with open('leo_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(horoscope[7])
-    elif user_sign == 'virgo':
+    elif get_sign == "virgo":
         print('\n' + '\t\t' + horoscope[8] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
         answer = input('\t').upper()
         if answer == 'Y':
             with open('virgo_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(horoscope[8])
-    elif user_sign == 'libra':
+    elif get_sign == "libra":
         print('\n' + '\t\t' + horoscope[9] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
         answer = input('\t').upper()
         if answer == 'Y':
             with open('libra_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(horoscope[9])
-    elif user_sign == 'scorpio':
+    elif get_sign == "scorpio":
         print('\n' + '\t\t' + horoscope[10] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
         answer = input('\t').upper()
         if answer == 'Y':
             with open('scorpio_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(horoscope[10])
-    elif user_sign == 'saggitarius':
+    elif get_sign == "sagittarius":
         print('\n' + '\t\t' + horoscope[11] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
         answer = input('\t').upper()
         if answer == 'Y':
-            with open('saggitarius_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
+            with open('sagittarius_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(horoscope[11])
-
-menu()
 
 PARSER = argparse.ArgumentParser()
 PARSER.add_argument('-e', '--element', help='Find out element by entering star sign', required=True)
@@ -229,3 +239,5 @@ if __name__ == "__main__":
         print("Water Element: {}".format(ARGS.element).title())
     elif ARGS.element == 'scorpio':
         print("Water Element: {}".format(ARGS.element).title())
+
+menu()
