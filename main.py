@@ -22,7 +22,7 @@ def greeting():
     first = input("\n\tWelcome! What is your first name? ")
     last = input("\tAnd your last name? ")
     print(Back.BLUE)
-    print(f"\n\tHello {first} {last}! \U0001F607")
+    print(f"\n\tHello {first} {last}! \U0001F607".title())
 
 def menu():
     """ Main user menu for the program """
@@ -68,9 +68,9 @@ def astro():
             month = str(input("\n\tWhat month were you born?: ")).strip().lower()
             if month not in ('january', 'february', 'march', 'april', 'may', 'june',
             'july', 'august', 'september', 'october', 'november', 'december'):
-                raise TypeError
+                raise ValueError
             break
-        except TypeError:
+        except ValueError:
             print("\tInvalid birth month! Please try again.")
     # Start of conditional statement for star signs
     if month == 'december':
@@ -126,7 +126,7 @@ def get_sign():
             'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius'):
                 raise TypeError
             return user_sign
-        except TypeError:
+        except ValueError:
             print("\tInvalid star sign! Please try again.")
 
 def get_readings(sign):
@@ -141,6 +141,7 @@ def get_readings(sign):
         if answer == 'Y':
             with open('capricorn_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(HOROSCOPE[0])
+                print("\n\tFile saved!")
     elif sign == "aquarius":
         print('\n' + '\t\t' + HOROSCOPE[1] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
@@ -148,6 +149,7 @@ def get_readings(sign):
         if answer == 'Y':
             with open('aquarius_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(HOROSCOPE[1])
+                print("\n\tFile saved!")
     elif sign == "pisces":
         print('\n' + '\t\t' + HOROSCOPE[2] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
@@ -155,6 +157,7 @@ def get_readings(sign):
         if answer == 'Y':
             with open('pisces_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(HOROSCOPE[2])
+                print("\n\tFile saved!")
     elif sign == "aries":
         print('\n' + '\t\t' + HOROSCOPE[3] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
@@ -162,6 +165,7 @@ def get_readings(sign):
         if answer == 'Y':
             with open('aries_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(HOROSCOPE[3])
+                print("\n\tFile saved!")
     elif sign == "taurus":
         print('\n' + '\t\t' + HOROSCOPE[4] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
@@ -169,6 +173,7 @@ def get_readings(sign):
         if answer == 'Y':
             with open('taurus_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(HOROSCOPE[4])
+                print("\n\tFile saved!")
     elif sign == "gemini":
         print('\n' + '\t\t' + HOROSCOPE[5] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
@@ -176,6 +181,7 @@ def get_readings(sign):
         if answer == 'Y':
             with open('gemini_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(HOROSCOPE[5])
+                print("\n\tFile saved!")
     elif sign == "cancer":
         print('\n' + '\t\t' + HOROSCOPE[6] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
@@ -183,6 +189,7 @@ def get_readings(sign):
         if answer == 'Y':
             with open('cancer_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(HOROSCOPE[6])
+                print("\n\tFile saved!")
     elif sign == "leo":
         print('\n' + '\t\t' + HOROSCOPE[7] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
@@ -190,6 +197,7 @@ def get_readings(sign):
         if answer == 'Y':
             with open('leo_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(HOROSCOPE[7])
+                print("\n\tFile saved!")
     elif sign == "virgo":
         print('\n' + '\t\t' + HOROSCOPE[8] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
@@ -197,6 +205,7 @@ def get_readings(sign):
         if answer == 'Y':
             with open('virgo_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(HOROSCOPE[8])
+                print("\n\tFile saved!")
     elif sign == "libra":
         print('\n' + '\t\t' + HOROSCOPE[9] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
@@ -204,6 +213,7 @@ def get_readings(sign):
         if answer == 'Y':
             with open('libra_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(HOROSCOPE[9])
+                print("\n\tFile saved!")
     elif sign == "scorpio":
         print('\n' + '\t\t' + HOROSCOPE[10] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
@@ -211,6 +221,7 @@ def get_readings(sign):
         if answer == 'Y':
             with open('scorpio_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(HOROSCOPE[10])
+                print("\n\tFile saved!")
     elif sign == "sagittarius":
         print('\n' + '\t\t' + HOROSCOPE[11] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
@@ -218,8 +229,9 @@ def get_readings(sign):
         if answer == 'Y':
             with open('sagittarius_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
                 file.write(HOROSCOPE[11])
+                print("\n\tFile saved!")
 
-# Argparse
+# Argparse for fetching horoscope reading outside of program
 if __name__ == "__main__":
     PARSER = argparse.ArgumentParser()
     PARSER.add_argument('-r', '--reading', help='Daily Horoscope Reading')
