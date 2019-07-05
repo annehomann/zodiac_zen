@@ -34,6 +34,56 @@ In time, this will be refined with more features and refactored code.
 
 
 
+## Installation
+
+To install Zodiac Zen, download `zodiac_zen.py` and run within your terminal
+
+Dependencies used are:
+
+- BeautifulSoup (for web scraping)
+- Requests (for web scraping - accessing URL)
+- Colorama (for styling)
+- Datetime (for datestamp)
+  
+
+<u>How to use Zodiac Zen:</u>
+
+In your terminal, run the command `python3 zodiac_zen.py`
+
+You will be asked for your name for a personalized experience. Once you are greeted by the program, you will then be displayed the main menu. 
+
+The main menu will give you 3 options:
+1) What is my star sign?
+2) Receive my daily horoscope
+3) Exit
+
+
+**1) What is my star sign?**
+Find out your star sign by using your birth date!
+
+**How do I use it?**
+Enter your birth date (using numbers only) and your birth month.
+This will give the program enough information to make a calculation and display your star sign.
+
+**2) Receive my daily horoscope**
+Get your daily horoscope by entering a star sign. When you get your reading back, you will be asked if you wish to save it. 
+
+**How do I use it?**
+Enter a star sign to receive that sign's daily horoscope. You will then be prompted if you wish to save the horoscope reading. Enter Y to save the reading to a text file on your local drive. If you choose not to save it, pressing N will return you to the menu.
+
+
+<u>Terminal functions</u>
+
+By running`zodiac_zen.py -h` you will be able to access the help menu
+
+If you wish to access a star sign's daily horoscope from outside the application, then you can do within your terminal this by running `zodiac_zen.py -r your_star_sign` or `zodiac_zen.py --reading your_star_sign`
+
+**Example:** `zodiac_zen.py -r leo` or `zodiac_zen.py --reading leo`
+
+This will give you your horoscope reading within your terminal window and will also give you the option to save to file.
+
+
+
 ## FAQ
 
 - How do I find out my star sign?
