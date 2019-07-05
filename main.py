@@ -15,7 +15,13 @@ from colorama import Back, Style
 
 # Shows current day and time to user
 DATESTAMP = datetime.datetime.now()
-print(DATESTAMP.strftime('\n%A, %B %d, %Y'))
+print(DATESTAMP.strftime('\n\t%A, %B %d, %Y'))
+
+def greeting():
+    first = input("\n\tWelcome! What is your first name? ")
+    last = input("\tAnd your last name? ")
+    print(f"\n\tHello {first} {last}!")
+
 
 def menu():
     """ Main user menu for the program """
@@ -132,8 +138,8 @@ def get_readings(sign):
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
         answer = input('\t').upper()
         if answer == 'Y':
-            with open('capricorn' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
-                file.write(HOROSCOPE[1])
+            with open('capricorn_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
+                file.write(HOROSCOPE[0])
     elif sign == "aquarius":
         print('\n' + '\t\t' + HOROSCOPE[1] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
@@ -221,6 +227,7 @@ if __name__ == "__main__":
     SIGN = MYARGS.reading
 
     if MYARGS.reading == None:
+        greeting()
         menu()
     else:
         web_scrape()
