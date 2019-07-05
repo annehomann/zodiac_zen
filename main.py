@@ -44,12 +44,14 @@ def menu():
         elif user_input == '2':
             sign = get_sign()
             get_readings(sign)
+            break
         # Option 3 is Exit
         elif user_input == '3':
             print('\n\tThank you for using Zodiac Zen! Goodbye \U0001F44B\n')
             break
         else:
             print('\n\tSorry, try again. Choose one from above')
+        
 
 def astro():
     """ Gets the user's birth date and month and outputs
@@ -124,7 +126,7 @@ def get_sign():
             web_scrape()
             if user_sign not in ('capricorn', 'aquarius', 'pisces', 'aries', 'taurus',
             'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius'):
-                raise TypeError
+                raise ValueError
             return user_sign
         except ValueError:
             print("\tInvalid star sign! Please try again.")
@@ -137,99 +139,195 @@ def get_readings(sign):
     if sign == "capricorn":
         print('\n' + '\t\t' + HOROSCOPE[0] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
-        answer = input('\t').upper()
-        if answer == 'Y':
-            with open('capricorn_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
-                file.write(HOROSCOPE[0])
-                print("\n\tFile saved!")
+        while True:
+            answer = input('\t').upper()
+            if answer == 'Y':
+                with open('capricorn_' + DATE_READING.strftime('%B_%d_%Y') + '.txt', 'w') as file:
+                    file.write(HOROSCOPE[0])
+                    print("\n\tFile saved!")
+                menu()
+                break
+            elif answer == 'N':
+                menu()
+                break
+            else:
+                print("\n\tPLEASE SELECT EITHER Y/ N")
     elif sign == "aquarius":
         print('\n' + '\t\t' + HOROSCOPE[1] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
-        answer = input('\t').upper()
-        if answer == 'Y':
-            with open('aquarius_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
-                file.write(HOROSCOPE[1])
-                print("\n\tFile saved!")
+        while True:
+            answer = input('\t').upper()
+            if answer == 'Y':
+                with open('aquarius_' + DATE_READING.strftime('%B_%d_%Y') + '.txt', 'w') as file:
+                    file.write(HOROSCOPE[1])
+                    print("\n\tFile saved!")
+                menu()
+                break
+            elif answer == 'N':
+                menu()
+                break
+            else:
+                print("\n\tPLEASE SELECT EITHER Y/ N")
     elif sign == "pisces":
         print('\n' + '\t\t' + HOROSCOPE[2] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
-        answer = input('\t').upper()
-        if answer == 'Y':
-            with open('pisces_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
-                file.write(HOROSCOPE[2])
-                print("\n\tFile saved!")
+        while True:
+            answer = input('\t').upper()
+            if answer == 'Y':
+                with open('pisces_' + DATE_READING.strftime('%B_%d_%Y') + '.txt', 'w') as file:
+                    file.write(HOROSCOPE[2])
+                    print("\n\tFile saved!")
+                menu()
+                break
+            elif answer == 'N':
+                menu()
+                break
+            else:
+                print("\n\tPLEASE SELECT EITHER Y/ N")
     elif sign == "aries":
         print('\n' + '\t\t' + HOROSCOPE[3] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
-        answer = input('\t').upper()
-        if answer == 'Y':
-            with open('aries_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
-                file.write(HOROSCOPE[3])
-                print("\n\tFile saved!")
+        while True:
+            answer = input('\t').upper()
+            if answer == 'Y':
+                with open('aries_' + DATE_READING.strftime('%B_%d_%Y') + '.txt', 'w') as file:
+                    file.write(HOROSCOPE[3])
+                    print("\n\tFile saved!")
+                menu()
+                break
+            elif answer == 'N':
+                menu()
+                break
+            else:
+                print("\n\tPLEASE SELECT EITHER Y/ N")
     elif sign == "taurus":
         print('\n' + '\t\t' + HOROSCOPE[4] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
-        answer = input('\t').upper()
-        if answer == 'Y':
-            with open('taurus_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
-                file.write(HOROSCOPE[4])
-                print("\n\tFile saved!")
+        while True:
+            answer = input('\t').upper()
+            if answer == 'Y':
+                with open('taurus_' + DATE_READING.strftime('%B_%d_%Y') + '.txt', 'w') as file:
+                    file.write(HOROSCOPE[4])
+                    print("\n\tFile saved!")
+                menu()
+                break
+            elif answer == 'N':
+                menu()
+                break
+            else:
+                print("\n\tPLEASE SELECT EITHER Y/ N")
     elif sign == "gemini":
         print('\n' + '\t\t' + HOROSCOPE[5] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
-        answer = input('\t').upper()
-        if answer == 'Y':
-            with open('gemini_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
-                file.write(HOROSCOPE[5])
-                print("\n\tFile saved!")
+        while True:
+            answer = input('\t').upper()
+            if answer == 'Y':
+                with open('gemini_' + DATE_READING.strftime('%B_%d_%Y') + '.txt', 'w') as file:
+                    file.write(HOROSCOPE[5])
+                    print("\n\tFile saved!")
+                menu()
+                break
+            elif answer == 'N':
+                menu()
+                break
+            else:
+                print("\n\tPLEASE SELECT EITHER Y/ N")
     elif sign == "cancer":
         print('\n' + '\t\t' + HOROSCOPE[6] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
-        answer = input('\t').upper()
-        if answer == 'Y':
-            with open('cancer_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
-                file.write(HOROSCOPE[6])
-                print("\n\tFile saved!")
+        while True:
+            answer = input('\t').upper()
+            if answer == 'Y':
+                with open('cancer_' + DATE_READING.strftime('%B_%d_%Y') + '.txt', 'w') as file:
+                    file.write(HOROSCOPE[6])
+                    print("\n\tFile saved!")
+                menu()
+                break
+            elif answer == 'N':
+                menu()
+                break
+            else:
+                print("\n\tPLEASE SELECT EITHER Y/ N")
     elif sign == "leo":
         print('\n' + '\t\t' + HOROSCOPE[7] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
-        answer = input('\t').upper()
-        if answer == 'Y':
-            with open('leo_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
-                file.write(HOROSCOPE[7])
-                print("\n\tFile saved!")
+        while True:
+            answer = input('\t').upper()
+            if answer == 'Y':
+                with open('leo_' + DATE_READING.strftime('%B_%d_%Y') + '.txt', 'w') as file:
+                    file.write(HOROSCOPE[7])
+                    print("\n\tFile saved!")
+                menu()
+                break
+            elif answer == 'N':
+                menu()
+                break
+            else:
+                print("\n\tPLEASE SELECT EITHER Y/ N")
     elif sign == "virgo":
         print('\n' + '\t\t' + HOROSCOPE[8] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
-        answer = input('\t').upper()
-        if answer == 'Y':
-            with open('virgo_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
-                file.write(HOROSCOPE[8])
-                print("\n\tFile saved!")
+        while True:
+            answer = input('\t').upper()
+            if answer == 'Y':
+                with open('virgo_' + DATE_READING.strftime('%B_%d_%Y') + '.txt', 'w') as file:
+                    file.write(HOROSCOPE[8])
+                    print("\n\tFile saved!")
+                menu()
+                break
+            elif answer == 'N':
+                menu()
+                break
+            else:
+                print("\n\tPLEASE SELECT EITHER Y/ N")
     elif sign == "libra":
         print('\n' + '\t\t' + HOROSCOPE[9] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
-        answer = input('\t').upper()
-        if answer == 'Y':
-            with open('libra_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
-                file.write(HOROSCOPE[9])
-                print("\n\tFile saved!")
+        while True:
+            answer = input('\t').upper()
+            if answer == 'Y':
+                with open('libra_' + DATE_READING.strftime('%B_%d_%Y') + '.txt', 'w') as file:
+                    file.write(HOROSCOPE[9])
+                    print("\n\tFile saved!")
+                menu()
+                break
+            elif answer == 'N':
+                menu()
+                break
+            else:
+                print("\n\tPLEASE SELECT EITHER Y/ N")
     elif sign == "scorpio":
         print('\n' + '\t\t' + HOROSCOPE[10] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
-        answer = input('\t').upper()
-        if answer == 'Y':
-            with open('scorpio_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
-                file.write(HOROSCOPE[10])
-                print("\n\tFile saved!")
+        while True:
+            answer = input('\t').upper()
+            if answer == 'Y':
+                with open('scorpio_' + DATE_READING.strftime('%B_%d_%Y') + '.txt', 'w') as file:
+                    file.write(HOROSCOPE[10])
+                    print("\n\tFile saved!")
+                menu()
+                break
+            elif answer == 'N':
+                menu()
+                break
+            else:
+                print("\n\tPLEASE SELECT EITHER Y/ N")
     elif sign == "sagittarius":
         print('\n' + '\t\t' + HOROSCOPE[11] + '\n')
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
-        answer = input('\t').upper()
-        if answer == 'Y':
-            with open('sagittarius_' + DATE_READING.strftime('%B %d, %Y') + '.txt', 'w') as file:
-                file.write(HOROSCOPE[11])
-                print("\n\tFile saved!")
+        while True:
+            answer = input('\t').upper()
+            if answer == 'Y':
+                with open('sagittarius_' + DATE_READING.strftime('%B_%d_%Y') + '.txt', 'w') as file:
+                    file.write(HOROSCOPE[11])
+                    print("\n\tFile saved!")
+                menu()
+                break
+            elif answer == 'N':
+                menu()
+                break
+            else:
+                print("\n\tPLEASE SELECT EITHER Y/ N")
 
 # Argparse for fetching horoscope reading outside of program
 if __name__ == "__main__":
