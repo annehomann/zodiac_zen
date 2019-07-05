@@ -50,7 +50,8 @@ def menu():
             print('\n\tThank you for using Zodiac Zen! Goodbye \U0001F44B\n')
             break
         else:
-            print('\n\tSorry, try again. Choose one from above')
+            print(Fore.RED + '\n\tSorry, try again. Choose one from above')
+            print(Style.RESET_ALL)
         
 
 def astro():
@@ -157,7 +158,7 @@ def get_readings(sign):
                 break
             # If the user types in neither Y or N, it will ask them to try again
             else:
-                print(Fore.RED + "\n\tPLEASE SELECT EITHER Y/ N")
+                print(Fore.RED + "\n\tPLEASE TYPE EITHER Y/ N")
                 print(Style.RESET_ALL)
     elif sign == "aquarius":
         print('\n' + '\t\t' + HOROSCOPE[1] + '\n')
@@ -174,7 +175,7 @@ def get_readings(sign):
                 menu()
                 break
             else:
-                print(Fore.RED + "\n\tPLEASE SELECT EITHER Y/ N")
+                print(Fore.RED + "\n\tPLEASE TYPE EITHER Y/ N")
                 print(Style.RESET_ALL)
     elif sign == "pisces":
         print('\n' + '\t\t' + HOROSCOPE[2] + '\n')
@@ -191,7 +192,7 @@ def get_readings(sign):
                 menu()
                 break
             else:
-                print(Fore.RED + "\n\tPLEASE SELECT EITHER Y/ N")
+                print(Fore.RED + "\n\tPLEASE TYPE EITHER Y/ N")
                 print(Style.RESET_ALL)
     elif sign == "aries":
         print('\n' + '\t\t' + HOROSCOPE[3] + '\n')
@@ -208,7 +209,7 @@ def get_readings(sign):
                 menu()
                 break
             else:
-                print(Fore.RED + "\n\tPLEASE SELECT EITHER Y/ N")
+                print(Fore.RED + "\n\tPLEASE TYPE EITHER Y/ N")
                 print(Style.RESET_ALL)
     elif sign == "taurus":
         print('\n' + '\t\t' + HOROSCOPE[4] + '\n')
@@ -225,7 +226,7 @@ def get_readings(sign):
                 menu()
                 break
             else:
-                print(Fore.RED + "\n\tPLEASE SELECT EITHER Y/ N")
+                print(Fore.RED + "\n\tPLEASE TYPE EITHER Y/ N")
                 print(Style.RESET_ALL)
     elif sign == "gemini":
         print('\n' + '\t\t' + HOROSCOPE[5] + '\n')
@@ -242,7 +243,7 @@ def get_readings(sign):
                 menu()
                 break
             else:
-                print(Fore.RED + "\n\tPLEASE SELECT EITHER Y/ N")
+                print(Fore.RED + "\n\tPLEASE TYPE EITHER Y/ N")
                 print(Style.RESET_ALL)
     elif sign == "cancer":
         print('\n' + '\t\t' + HOROSCOPE[6] + '\n')
@@ -259,7 +260,7 @@ def get_readings(sign):
                 menu()
                 break
             else:
-                print(Fore.RED + "\n\tPLEASE SELECT EITHER Y/ N")
+                print(Fore.RED + "\n\tPLEASE TYPE EITHER Y/ N")
                 print(Style.RESET_ALL)
     elif sign == "leo":
         print('\n' + '\t\t' + HOROSCOPE[7] + '\n')
@@ -276,7 +277,7 @@ def get_readings(sign):
                 menu()
                 break
             else:
-                print(Fore.RED + "\n\tPLEASE SELECT EITHER Y/ N")
+                print(Fore.RED + "\n\tPLEASE TYPE EITHER Y/ N")
                 print(Style.RESET_ALL)
     elif sign == "virgo":
         print('\n' + '\t\t' + HOROSCOPE[8] + '\n')
@@ -293,7 +294,7 @@ def get_readings(sign):
                 menu()
                 break
             else:
-                print(Fore.RED + "\n\tPLEASE SELECT EITHER Y/ N")
+                print(Fore.RED + "\n\tPLEASE TYPE EITHER Y/ N")
                 print(Style.RESET_ALL)
                 print(Style.RESET_ALL)
     elif sign == "libra":
@@ -311,7 +312,7 @@ def get_readings(sign):
                 menu()
                 break
             else:
-                print(Fore.RED + "\n\tPLEASE SELECT EITHER Y/ N")
+                print(Fore.RED + "\n\tPLEASE TYPE EITHER Y/ N")
                 print(Style.RESET_ALL)
     elif sign == "scorpio":
         print('\n' + '\t\t' + HOROSCOPE[10] + '\n')
@@ -328,7 +329,7 @@ def get_readings(sign):
                 menu()
                 break
             else:
-                print(Fore.RED + "\n\tPLEASE SELECT EITHER Y/ N")
+                print(Fore.RED + "\n\tPLEASE TYPE EITHER Y/ N")
                 print(Style.RESET_ALL)
     elif sign == "sagittarius":
         print('\n' + '\t\t' + HOROSCOPE[11] + '\n')
@@ -345,12 +346,13 @@ def get_readings(sign):
                 menu()
                 break
             else:
-                print(Fore.RED + "\n\tPLEASE SELECT EITHER Y/ N")
+                print(Fore.RED + "\n\tPLEASE TYPE EITHER Y/ N")
                 print(Style.RESET_ALL)
 
 # Argparse for fetching horoscope reading outside of program
 if __name__ == "__main__":
     PARSER = argparse.ArgumentParser()
+    # Allows user to receive daily reading from outside the program
     PARSER.add_argument('-r', '--reading', help='Daily Horoscope Reading')
     MYARGS = PARSER.parse_args()
 
