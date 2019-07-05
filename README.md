@@ -14,7 +14,7 @@ It's a fun, little app that works out what your star sign is and also what your 
 
 In time, this will be refined with more features and refactored code.
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/screencast.gif)
+![](screencast.gif)
 
 
 
