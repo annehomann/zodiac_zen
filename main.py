@@ -141,15 +141,18 @@ def get_readings(sign):
         print('\n\tWould you like to save a copy of your horoscope?\n\tY/N?\n')
         while True:
             answer = input('\t').upper()
+            # If Y, it saves the daily reading to a textfile
             if answer == 'Y':
                 with open('capricorn_' + DATE_READING.strftime('%B_%d_%Y') + '.txt', 'w') as file:
                     file.write(HOROSCOPE[0])
                     print("\n\tFile saved!")
                 menu()
                 break
+            # If N, it will take the user back to the menu
             elif answer == 'N':
                 menu()
                 break
+            # If the user types in neither Y or N, it will ask them to try again
             else:
                 print("\n\tPLEASE SELECT EITHER Y/ N")
     elif sign == "aquarius":
