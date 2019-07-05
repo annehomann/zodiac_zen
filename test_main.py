@@ -1,32 +1,12 @@
-from main import astro
-from main import readings
+from main import greeting
+from main import get_readings
 
+def test_greeting(monkeypatch):
 
-def test_astro():
-    """ 
-    A unit test to see if text is written to a file
-    """
+    # monkeypatch the "input" function, so that it returns "Anne".
+    # This simulates the user entering "Anne" in the terminal:
+    monkeypatch.setattr('builtins.input', lambda x: "Anne")
 
-    TEST_TEXT = "Here is some text"
-    TEST_FILENAME = "filename.out"
-
-    astro(TEST_TEXT, TEST_FILENAME)
-
-    with open(TEST_FILENAME) as file:
-        lines = file.readlines()
-        final_line = lines[-1]
-
-    assert final_line == TEST_TEXT
-    #os.remove(TEST_FILENAME)
-
-# def test_astro():
-#     """ 
-#     A unit test to see if a file is created
-#     """
-#     TEST_TEXT = "test"
-#     TEST_FILENAME = "file_name.out"
-
-#     text_to_file(TEST_TEXT, TEST_FILENAME)
-
-#     assert TEST_FILENAME in os.listdir()
-#     os.remove(TEST_FILENAME)
+    # go about using input() like you normally would:
+    i = input("What is your name?")
+    assert i == "Anne"
