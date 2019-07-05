@@ -18,10 +18,11 @@ DATESTAMP = datetime.datetime.now()
 print(DATESTAMP.strftime('\n\t%A, %B %d, %Y'))
 
 def greeting():
+    """ A personaized greeting for the user """
     first = input("\n\tWelcome! What is your first name? ")
     last = input("\tAnd your last name? ")
-    print(f"\n\tHello {first} {last}!")
-
+    print(Back.BLUE)
+    print(f"\n\tHello {first} {last}! \U0001F607")
 
 def menu():
     """ Main user menu for the program """
