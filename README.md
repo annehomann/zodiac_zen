@@ -32,7 +32,7 @@ In time, this will be refined with more features and refactored code.
 
 
 
-## Installation
+## Help File
 
 To install Zodiac Zen you will need <u>pyinstaller</u> installed
 
@@ -44,6 +44,10 @@ Dependencies used are:
 - Colorama (for styling)
 - Datetime (for datestamp)
 - Pyinstaller (to install program)
+- Pylint (for linting)
+- Pytest (for testing)
+
+
 
 
 
@@ -74,28 +78,33 @@ Enter a star sign to receive that sign's daily horoscope. You will then be promp
 
 
 
-**Terminal functions**
-
-By running`zodiac_zen.py -h` you will be able to access the help menu
-
-If you wish to access a star sign's daily horoscope from outside the application, then you can do within your terminal this by running `zodiac_zen.py -r your_star_sign` or `zodiac_zen.py --reading your_star_sign`
-
-**Example:** `zodiac_zen.py -r leo` or `zodiac_zen.py --reading leo`
-
-This will give you your horoscope reading within your terminal window and will also give you the option to save to file.
-
-
-
 ## FAQ
 
 - How do I find out my star sign?
+  
   - Easy! Just select option 1 in the menu and enter your date of birth and your birth month and Zodiac Zen will work it out for you 
+  
 - How do I read my daily horoscope?
+  
   - Select option 2 in the menu and enter your star sign. This will retrieve your daily reading specific to your star sign
+  
 - Can I read the daily horoscope for any other star sign?
+  
   - Of course you can! You can type in any star sign and get the relevant reading! Show off to your friends 😉
+  
 - Can I download my reading?
+  
   - Definitely. After you get your reading, you will be asked if you want to save a copy. Press Y and you will have a copy in your downloads.
+  
+- Am I able to access any of the app functions from the outside? Using my own terminal?
+
+  - You sure can. By downloading `zodiac_zen.py` and running `zodiac_zen.py -h` within your terminal, you will be able to access the help menu
+
+    If you wish to access a star sign's daily horoscope, then you can do this by running `zodiac_zen.py -r your_star_sign` or `zodiac_zen.py --reading your_star_sign`
+
+    **Example:** `zodiac_zen.py -r leo` or `zodiac_zen.py --reading leo`
+
+    This will give you your horoscope reading within your terminal window and will also give you the option to save to file.
 
 
 
