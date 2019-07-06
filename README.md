@@ -118,6 +118,12 @@ test_web_scrape is to test whether the URL is a valid URL or not. In this test, 
 
 
 
+## Software Development Plan
+
+Can be read [here](docs/software_development_plan)
+
+
+
 ## To Work On Next
 
 Following up from this project, these points are what I would like to continue working on and then revisit my code
