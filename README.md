@@ -47,7 +47,7 @@ Dependencies used are:
 
 
 
-<u>How to use Zodiac Zen:</u>
+**How to use Zodiac Zen:**
 
 In your terminal, run the command `python3 zodiac_zen.py`
 
@@ -73,7 +73,8 @@ Get your daily horoscope by entering a star sign. When you get your reading back
 Enter a star sign to receive that sign's daily horoscope. You will then be prompted if you wish to save the horoscope reading. Enter Y to save the reading to a text file on your local drive. If you choose not to save it, pressing N will return you to the menu.
 
 
-<u>Terminal functions</u>
+
+**Terminal functions**
 
 By running`zodiac_zen.py -h` you will be able to access the help menu
 
