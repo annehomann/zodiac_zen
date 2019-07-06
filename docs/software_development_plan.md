@@ -207,12 +207,14 @@ Examples of Trello in use:
 
 
 <u>**TIMELINE**</u>
-Create main menu - 28/06/19
-Complete feature 1 - 28/06/19
-Complete feature 2 - 28/06/19
-Complete feature 3 - 29/06//19
-Implement Argparse - 4/07/19
-Unit Testing/Pytest - 5/07/19
-Error Handling - 6/07/19
-Pylint code - 6/07/19
-Package final product - 6/07/19
+
+- Create main menu - 28/06/19
+- Complete feature 1 - 28/06/19
+- Complete feature 2 - 28/06/19
+- Complete feature 3 - 29/06//19
+- Implement Argparse - 4/07/19
+- Unit Testing/Pytest - 5/07/19
+- Error Handling - 6/07/19
+- Pylint code - 6/07/19
+- Package final product - 6/07/19
+
