@@ -120,7 +120,7 @@ test_web_scrape is to test whether the URL is a valid URL or not. In this test, 
 
 ## Software Development Plan
 
-Can be read [here](docs/software_development_plan)
+Can be read [here](tree/master/docs/software_development_plan.md)
 
 
 
