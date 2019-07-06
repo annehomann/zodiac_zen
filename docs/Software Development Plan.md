@@ -20,11 +20,11 @@ An example of how a user would use this program is a busy professional who likes
 
 <u>Feature 1 - Find out your star sign</u>
 
-This first feature allows the user to find out what star sign they are by telling the program their date of birth and birth month. Once submitted, this allows Zodiac Zen to make the correct calculation and return the user's star sign. This is done by running the birth date against a series of date checks within the program. 
+This first feature allows the user to find out what star sign they are by telling the program their date of birth and birth month. This is by getting the user to enter them by two inputs. Once submitted, this allows Zodiac Zen to make the correct calculation and return the user's star sign. This is done by running the birth date against a series of date checks within the program. The calculation is done within the program through a if/elif conditional statement.
 
 <u>Feature 2 - Retrieve your daily horoscope</u>
 
-This feature allows the user to access their daily horoscope reading which will be displayed to them to read. The user is prompted for their star sign and this then retrieves the reading by using a package called *BeautifulSoup*, which allows a webpage to be scraped of information then saved within the program. This then outputs the daily reading for the user to read. They can also enter other star signs if they wish to access a daily reading for someone else.
+This feature allows the user to access their daily horoscope reading which will be displayed to them to read. The user is prompted for their star sign and this then retrieves the reading by using a package called *BeautifulSoup*, which allows a webpage to be scraped of information then saved within the program. This then outputs the daily reading for the user to read. They can also enter other star signs if they wish to access a daily reading for someone else. Each daily reading is stored in a list and then when a star sign is entered, it corresponds with its index (E.g. cancer = horoscope[4]).
 
 <u>Feature 3 - Save daily horoscope to a text file</u>
 
@@ -34,7 +34,9 @@ This final feature allows the user to save their daily horoscope reading into a 
 
 #### <u>User Interaction and Experience</u>
 
-When Zodiac Zen first opens to the user, they will be shown the day's date and then greeted by the program. They will then be asked for their first name, followed by their last name.
+Zodiac Zen was designed with the user in mind. The menu is very clean and straightforward with minimal clicks needed to execute an action. Colour and spacing was strategically used for a better user experience and when the program starts, the user is asked for their name for a personalised greeting making the experience personal.
+
+When the program first opens to the user, they will be shown the day's date and then greeted by the program. They will then be asked for their first name, followed by their last name.
 
 ```
 				Friday, July 05, 2019
@@ -43,7 +45,7 @@ When Zodiac Zen first opens to the user, they will be shown the day's date and t
         And your last name? Homann
 ```
 
-When submitted, the user will receive a personalized greeting followed by the main menu, which will clearly display the options in a numbered fashion.
+When submitted, the user will receive a personalised greeting followed by the main menu, which will clearly display the options in a numbered fashion.
 
 ```
 				Hello Anne Homann! 😇
@@ -160,9 +162,9 @@ The final option is for the user to exit the program. This displays a goodbye me
 
 #### Control Flow Diagram
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/Documentation/anne-homann-CSB-flowchart_small.png)
+![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-flowchart_small.png)
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/Documentation/anne-homann-CSB-flowchart_legend.png)
+![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-flowchart_legend.png)
 
 - A larger version of the control flow diagram is in the docs folder.
 
@@ -184,21 +186,23 @@ This feature is a continuation of feature 2 and will be implemented by using the
 
 | Feature 1                                                    | Feature 2                                                    | Feature 3                                                    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [  ] Create an input for the user to enter their date of birth<br />[  ] Create an input for the user to enter their month of birth<br />[  ] Use if/elif statement to cycle through star signs **(priority)**<br />[  ] Display correct star sign to user **(priority)**<br />[  ] Take user back to menu | [  ] Create an input for the user to enter their star sign<br />[  ] Use BeautifulSoup for web scraping of horoscopes **(priority)**<br />[  ] Use a list to store scraped readings from each sign **(priority)**<br />[  ] Use indices to access each one **(priority)**<br />[  ] Display daily horoscope reading to user<br /> | [  ] After the reading has been displayed, ask the user if they wish to save their reading<br />[  ] If Y, use a write() method to save the text to a file<br />[  ] Filename will be user's star sign and today's date **(capricorn_July 01, 2019.txt)**<br />[ ] If N, take user back to menu |
+| [  ] Create an input for the user to enter their date of birth (2)<br />[  ] Create an input for the user to enter their month of birth (2)<br />[  ] Use if/elif statement to cycle through star signs (3)<br />[  ] Display correct star sign to user (3)<br />[  ] Take user back to menu (1) | [  ] Create an input for the user to enter their star sign (2)<br />[  ] Use BeautifulSoup for web scraping of horoscopes (3)<br />[  ] Use a list to store scraped readings from each sign (3)<br />[  ] Use indices to access each one (3)<br />[  ] Display daily horoscope reading to user (2)<br /> | [  ] After the reading has been displayed, ask the user if they wish to save their reading (3)<br />[  ] If Y, use a write() method to save the text to a file (3)<br />[  ] Filename will be user's star sign and today's date **(capricorn_July 01, 2019.txt)** (2)<br />[ ] If N, take user back to menu (1) |
+
+Priority key  =   (1) Low     (2) Medium      (3) High
 
 More detailed checklists and deadlines appear on trello board: [Zodiac Zen](https://trello.com/b/5ianrkvy/horoscope-app)
 
 Examples of Trello in use:
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/Documentation/anne-homann-CSB-project-mgt-trello1.png)
+![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-project-mgt-trello1.png)
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/Documentation/anne-homann-CSB-project-mgt-trello2.png)
+![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-project-mgt-trello2.png)
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/Documentation/anne-homann-CSB-project-mgt-trello3.png)
+![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-project-mgt-trello3.png)
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/Documentation/anne-homann-CSB-project-mgt-trello4.png)
+![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-project-mgt-trello4.png)
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/Documentation/anne-homann-CSB-project-mgt-trello5.png)
+![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-project-mgt-trello5.png)
 
 
 
