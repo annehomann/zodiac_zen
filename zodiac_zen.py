@@ -31,10 +31,6 @@ def greeting():
             break
         print(Fore.RED + "\tWe need a last name!")
         print(Style.RESET_ALL)
-
-
-    #first = input("\n\tWelcome! What is your first name? ")
-    #last = input("\tAnd your last name? ")
     print(Back.BLUE)
     print(f"\n\tHello {first} {last}! \U0001F607".title())
 
@@ -66,7 +62,6 @@ def menu():
         else:
             print(Fore.RED + '\n\tSorry, try again. Choose one from above')
             print(Style.RESET_ALL)
-        
 
 def astro():
     """ Gets the user's birth date and month and outputs
