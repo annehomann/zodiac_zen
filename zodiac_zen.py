@@ -19,8 +19,22 @@ print(DATESTAMP.strftime('\n\t%A, %B %d, %Y'))
 
 def greeting():
     """ A personaized greeting for the user """
-    first = input("\n\tWelcome! What is your first name? ")
-    last = input("\tAnd your last name? ")
+    while True:
+        first = input("\n\tWelcome! What is your first name? ").strip()
+        if first:
+            break
+        print(Fore.RED + "\tWe need a first name!")
+        print(Style.RESET_ALL)
+    while True:
+        last = input("\tAnd your last name? ").strip()
+        if last:
+            break
+        print(Fore.RED + "\tWe need a last name!")
+        print(Style.RESET_ALL)
+
+
+    #first = input("\n\tWelcome! What is your first name? ")
+    #last = input("\tAnd your last name? ")
     print(Back.BLUE)
     print(f"\n\tHello {first} {last}! \U0001F607".title())
 
