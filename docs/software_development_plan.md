@@ -162,9 +162,9 @@ The final option is for the user to exit the program. This displays a goodbye me
 
 ### Control Flow Diagram
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-flowchart_small.png)
+![](https://github.com/annehomann/zodiac_zen/blob/master/docs/anne-homann-CSB-flowchart_small.png)
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-flowchart_legend.png)
+![](https://github.com/annehomann/zodiac_zen/blob/master/docs/anne-homann-CSB-flowchart_legend.png)
 
 - A larger version of the control flow diagram is in the docs folder.
 
@@ -194,15 +194,15 @@ More detailed checklists and deadlines appear on trello board: [Zodiac Zen](http
 
 Examples of Trello in use:
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-project-mgt-trello1.png)
+![](https://github.com/annehomann/zodiac_zen/blob/master/docs/anne-homann-CSB-project-mgt-trello1.png)
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-project-mgt-trello2.png)
+![](https://github.com/annehomann/zodiac_zen/blob/master/docs/anne-homann-CSB-project-mgt-trello2.png)
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-project-mgt-trello3.png)
+![](https://github.com/annehomann/zodiac_zen/blob/master/docs/anne-homann-CSB-project-mgt-trello3.png)
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-project-mgt-trello4.png)
+![](https://github.com/annehomann/zodiac_zen/blob/master/docs/anne-homann-CSB-project-mgt-trello4.png)
 
-![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-project-mgt-trello5.png)
+![](https://github.com/annehomann/zodiac_zen/blob/master/docs/anne-homann-CSB-project-mgt-trello5.png)
 
 
 
