@@ -4,7 +4,7 @@
 
 [Github](https://github.com/annehomann/zodiac_zen)
 
-#### <u>Statement of Purpose and Scope</u>
+### <u>Statement of Purpose and Scope</u>
 
 Zodiac Zen is a CLI that allows a user to find out their astrological sign, receive their daily horoscope reading and are given the option to download their daily reading to keep on file. This first option is available if the user does not know their star sign or would like to read the horoscope of a friend and/or family member. This is done by the user being asked to input their information, date of birth and month, to receive the correct star sign in return. The next option is if they would like to read their daily horoscope. This information is scraped from an astrology webpage using the python package BeautifulSoup4. The user will also be given the option to save the daily horoscope to a text file with a datestamp attached to the filename for easy reference.
 
@@ -16,23 +16,23 @@ An example of how a user would use this program is a busy professional who likes
 
 
 
-#### <u>Features</u>
+### <u>Features</u>
 
-<u>Feature 1 - Find out your star sign</u>
+##### <u>Feature 1 - Find out your star sign</u>
 
 This first feature allows the user to find out what star sign they are by telling the program their date of birth and birth month. This is by getting the user to enter them by two inputs. Once submitted, this allows Zodiac Zen to make the correct calculation and return the user's star sign. This is done by running the birth date against a series of date checks within the program. The calculation is done within the program through a if/elif conditional statement.
 
-<u>Feature 2 - Retrieve your daily horoscope</u>
+##### <u>Feature 2 - Retrieve your daily horoscope</u>
 
 This feature allows the user to access their daily horoscope reading which will be displayed to them to read. The user is prompted for their star sign and this then retrieves the reading by using a package called *BeautifulSoup*, which allows a webpage to be scraped of information then saved within the program. This then outputs the daily reading for the user to read. They can also enter other star signs if they wish to access a daily reading for someone else. Each daily reading is stored in a list and then when a star sign is entered, it corresponds with its index (E.g. cancer = horoscope[4]).
 
-<u>Feature 3 - Save daily horoscope to a text file</u>
+##### <u>Feature 3 - Save daily horoscope to a text file</u>
 
 This final feature allows the user to save their daily horoscope reading into a text file and onto their computer. The filename will have the name of the star sign that is being looked up plus the current date. This is so the user will be able to easily collate their readings by sign and date. The user will also be able to store readings of other star signs for other people, say family members, in organised folders if they so desire. 
 
 
 
-#### <u>User Interaction and Experience</u>
+### <u>User Interaction and Experience</u>
 
 Zodiac Zen was designed with the user in mind. The menu is very clean and straightforward with minimal clicks needed to execute an action. Colour and spacing was strategically used for a better user experience and when the program starts, the user is asked for their name for a personalised greeting making the experience personal.
 
@@ -160,7 +160,7 @@ The final option is for the user to exit the program. This displays a goodbye me
 
 
 
-#### Control Flow Diagram
+### Control Flow Diagram
 
 ![](/Users/annehomann/coder_academy/term1/assignment1/zodiac_zen/docs/anne-homann-CSB-flowchart_small.png)
 
@@ -170,17 +170,17 @@ The final option is for the user to exit the program. This displays a goodbye me
 
 
 
-#### Implementation Plan
+### Implementation Plan
 
-<u>Feature 1 - Find our your star sign</u>
+##### <u>Feature 1 - Find our your star sign</u>
 
 This feature will be implemented by writing an if/elif statement that cycles through the star signs until the correct sign is selected that corresponds to the user's birth date and month details. The user will be able to enter their information by using two inputs that captures their answers. After the star sign is displayed, the user is taken back to the main menu.
 
-<u>Feature 2 - Retrieve your daily horoscope</u>
+##### <u>Feature 2 - Retrieve your daily horoscope</u>
 
 This feature will be implemented by first, using BeautifulSoup to scrape the horoscope readings from an HTML page and then store them into a list. As there will be 12 readings within the list, it will be easy to access each one separately by their index number. Again, an if/elif statement will be used to cycle through the star signs. An input will be used to capture the star sign entered by the user and that will determine which horoscope reading is returned.
 
-<u>Feature 3 - Save daily horoscope to a text file</u>
+##### <u>Feature 3 - Save daily horoscope to a text file</u>
 
 This feature is a continuation of feature 2 and will be implemented by using the file.write() method which is included within the if/elif conditional statement. The user is prompted after the reading if they wish to save a copy. If the user enters Y, the reading is written to a text file and saved on their local hard drive. The filename is the star sign that was entered and today's date, (E.g. **capricorn_July 01, 2019.txt**). If the user selects N, then they are returned to the main menu.   
 
@@ -206,7 +206,7 @@ Examples of Trello in use:
 
 
 
-<u>**TIMELINE**</u>
+### <u>**Timeline**</u>
 
 - Create main menu - 28/06/19
 - Complete feature 1 - 28/06/19
