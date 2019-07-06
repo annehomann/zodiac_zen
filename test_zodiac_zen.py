@@ -31,5 +31,3 @@ def test_web_scrape():
     url = 'http://annehomamm.github.io/astrology.html'
     resp = requests.get(url)
     assert resp.status_code == 404
-
-#def test_get_readings():
