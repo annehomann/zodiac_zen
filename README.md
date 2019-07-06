@@ -34,8 +34,6 @@ In time, this will be refined with more features and refactored code.
 
 ## Help File
 
-To install Zodiac Zen you will need <u>pyinstaller</u> installed
-
 
 Dependencies used are:
 
@@ -47,13 +45,41 @@ Dependencies used are:
 - Pylint (for linting)
 - Pytest (for testing)
 
+```
+pip3 install beautifulsoup4
+pip3 install requests
+pip3 install colorama
+pip3 install datetime
+pip install PyInstaller
+pip install pylint
+pip install pytest
+```
 
 
 
+### **Installation**
 
-**How to use Zodiac Zen:**
+There are two ways you can install the program, depending on your intention of use.
 
-In your terminal, run the command `python3 zodiac_zen.py`
+#### Running the executable file
+
+To run the program, find the zodiac_zen executable file in the dist folder and double click. This will open and run the program with all dependencies installed.
+
+#### Compiling the program yourself
+
+If you have downloaded `zodiac_zen.py` to make your own custom changes and want to make it into an executable program to share, you will need pyinstaller installed. You will then be able to run the following command:
+
+`pyinstaller zodiac_zen.py --clean -F`
+
+The file will be in the dist folder of your working directory.
+
+#### Editing the file in your own IDE
+
+If you're playing around with the file within your own IDE, simply run `python3 zodiac_zen.py`in the terminal to execute and run.
+
+
+
+### How to use Zodiac Zen
 
 You will be asked for your name for a personalized experience. Once you are greeted by the program, you will then be displayed the main menu. 
 
@@ -62,19 +88,33 @@ The main menu will give you 3 options:
 2) Receive my daily horoscope
 3) Exit
 
+##### **1) What is my star sign?**
 
-**1) What is my star sign?**
 Find out your star sign by using your birth date!
 
-**How do I use it?**
+##### **How do I use it?**
+
 Enter your birth date (using numbers only) and your birth month.
 This will give the program enough information to make a calculation and display your star sign.
 
-**2) Receive my daily horoscope**
+##### **2) Receive my daily horoscope**
+
 Get your daily horoscope by entering a star sign. When you get your reading back, you will be asked if you wish to save it. 
 
-**How do I use it?**
+##### **How do I use it?**
+
 Enter a star sign to receive that sign's daily horoscope. You will then be prompted if you wish to save the horoscope reading. Enter Y to save the reading to a text file on your local drive. If you choose not to save it, pressing N will return you to the menu.
+
+
+
+### System requirements
+
+Operating System - Windows 95 or later, Mac OS X 10 or later
+Processor Speed - Pentium 4, 3.2 GHz or Power PC G5, 2.0 GHz
+Memory - At least 512Mb
+Graphics Card - ATI Radeon 9800 w/ 256 MB video memory
+Hard Disk Space - At least 1GB
+Internet connection
 
 
 
