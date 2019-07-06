@@ -34,7 +34,8 @@ In time, this will be refined with more features and refactored code.
 
 ## Installation
 
-To install Zodiac Zen, download `zodiac_zen.py` and run within your terminal
+To install Zodiac Zen you will need <u>pyinstaller</u> installed
+
 
 Dependencies used are:
 
@@ -42,7 +43,9 @@ Dependencies used are:
 - Requests (for web scraping - accessing URL)
 - Colorama (for styling)
 - Datetime (for datestamp)
-  
+- Pyinstaller (to install program)
+
+
 
 <u>How to use Zodiac Zen:</u>
 
@@ -92,6 +95,26 @@ This will give you your horoscope reading within your terminal window and will a
   - Of course you can! You can type in any star sign and get the relevant reading! Show off to your friends 😉
 - Can I download my reading?
   - Definitely. After you get your reading, you will be asked if you want to save a copy. Press Y and you will have a copy in your downloads.
+
+
+
+## Testing
+
+The file `test_zodiac_zen.py` outlines each unit test. The functions tested are web_scrape() and greeting().
+
+test_greeting is to test user input validation, in this case the user's name. This is using the monkeypatch feature which is a part of pytest.
+
+test_web_scrape is to test whether the URL is a valid URL or not. In this test, I purposely mistyped the URL so it returns a 404 error.
+
+
+
+## To Work On Next
+
+Following up from this project, these points are what I would like to continue working on and then revisit my code
+
+- Refactor code, possibly making each star sign into it's own separate function? Also maybe using less loops as it gets very confusing.
+- Keep learning about unit testing
+- Keep learning about Argparse
 
 
 
