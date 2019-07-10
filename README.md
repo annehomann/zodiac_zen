@@ -109,12 +109,12 @@ Enter a star sign to receive that sign's daily horoscope. You will then be promp
 
 ### System requirements
 
-Operating System - Windows 95 or later, Mac OS X 10 or later
-Processor Speed - Pentium 4, 3.2 GHz or Power PC G5, 2.0 GHz
-Memory - At least 512Mb
-Graphics Card - ATI Radeon 9800 w/ 256 MB video memory
-Hard Disk Space - At least 1GB
-Internet connection
+- Operating System - Windows 95 or later, Mac OS X 10 or later
+- Processor Speed - Pentium 4, 3.2 GHz or Power PC G5, 2.0 GHz
+- Memory - At least 512Mb
+- Graphics Card - ATI Radeon 9800 w/ 256 MB video memory
+- Hard Disk Space - At least 1GB
+- Internet connection
 
 
 
